@@ -9,19 +9,17 @@ const PRODUCTS = {
   8: { id: 8, name: 'Camiseta Focus Training', price: 74900, emoji: '👕' }
 };
 
-const STORAGE_KEY = 'juan_ramirez_cart_v1';
+const STORAGE_KEY = 'juan_ramirez_demo_cart';
 let cart = [];
 
-const cartPanel = document.getElementById('cartPanel');
-const cartBackdrop = document.getElementById('cartBackdrop');
 const openCartBtn = document.getElementById('openCart');
 const closeCartBtn = document.getElementById('closeCart');
+const cartPanel = document.getElementById('cartPanel');
+const cartBackdrop = document.getElementById('cartBackdrop');
 const cartCount = document.getElementById('cartCount');
 const cartItemsContainer = document.getElementById('cartItemsContainer');
 const cartSubtotal = document.getElementById('cartSubtotal');
-const cartShipping = document.getElementById('cartShipping');
-const checkoutBtn = document.getElementById('checkoutBtn');
-const menuToggle = document.getElementById('menuToggle');
+const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 
 function formatCOP(value) {
@@ -33,16 +31,18 @@ function formatCOP(value) {
 }
 
 function saveCart() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  } catch (error) {
+    console.warn('No se pudo guardar el carrito.', error);
+  }
 }
 
 function loadCart() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     cart = raw ? JSON.parse(raw) : [];
-    if (!Array.isArray(cart)) {
-      cart = [];
-    }
+    if (!Array.isArray(cart)) cart = [];
   } catch (error) {
     cart = [];
   }
@@ -58,28 +58,27 @@ function closeCart() {
   cartBackdrop.classList.remove('open');
 }
 
-function updateCartUI() {
+function updateCart() {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   cartCount.textContent = totalItems;
   cartSubtotal.textContent = formatCOP(subtotal);
-  cartShipping.textContent = subtotal >= 250000 ? 'Gratis' : 'Desde $9.900';
 
   if (!cart.length) {
-    cartItemsContainer.innerHTML = '<div class="cart-empty">No has agregado productos todavía.</div>';
+    cartItemsContainer.innerHTML = '<p class="empty-cart">No hay productos en el carrito.</p>';
     return;
   }
 
-  cartItemsContainer.innerHTML = cart.map((item) => `
+  cartItemsContainer.innerHTML = cart.map(item => `
     <article class="cart-item">
       <div class="cart-thumb">${item.emoji}</div>
       <div>
         <h4>${item.name}</h4>
         <p>Talla: ${item.size}</p>
         <p>${formatCOP(item.price)}</p>
-        <div class="cart-qty">
-          <button class="qty-btn" type="button" data-action="dec" data-key="${item.key}">−</button>
+        <div class="qty-row">
+          <button class="qty-btn" type="button" data-action="dec" data-key="${item.key}">-</button>
           <span>${item.quantity}</span>
           <button class="qty-btn" type="button" data-action="inc" data-key="${item.key}">+</button>
           <button class="remove-btn" type="button" data-action="remove" data-key="${item.key}">Quitar</button>
@@ -94,7 +93,7 @@ function addToCart(productId, size) {
   if (!product) return;
 
   const key = `${productId}-${size}`;
-  const existing = cart.find((item) => item.key === key);
+  const existing = cart.find(item => item.key === key);
 
   if (existing) {
     existing.quantity += 1;
@@ -111,66 +110,40 @@ function addToCart(productId, size) {
   }
 
   saveCart();
-  updateCartUI();
+  updateCart();
   openCart();
 }
 
-function changeQuantity(key, action) {
-  const item = cart.find((entry) => entry.key === key);
+function changeItem(key, action) {
+  const item = cart.find(entry => entry.key === key);
   if (!item) return;
 
-  if (action === 'inc') {
-    item.quantity += 1;
-  }
-
-  if (action === 'dec') {
-    item.quantity -= 1;
-  }
+  if (action === 'inc') item.quantity += 1;
+  if (action === 'dec') item.quantity -= 1;
 
   if (action === 'remove' || item.quantity <= 0) {
-    cart = cart.filter((entry) => entry.key !== key);
+    cart = cart.filter(entry => entry.key !== key);
   }
 
   saveCart();
-  updateCartUI();
+  updateCart();
 }
 
-function bindProductButtons() {
-  const productCards = document.querySelectorAll('.product-card');
+function bindProducts() {
+  const cards = document.querySelectorAll('.product-card');
 
-  productCards.forEach((card) => {
+  cards.forEach(card => {
     const button = card.querySelector('.btn-add-cart');
     const select = card.querySelector('.size-select');
 
     if (!button) return;
 
     button.addEventListener('click', () => {
-      const productId = Number(card.dataset.id);
+      const id = Number(card.dataset.id);
       const size = select ? select.value : 'Única';
-      addToCart(productId, size);
+      addToCart(id, size);
     });
   });
-}
-
-function bindReveal() {
-  const revealElements = document.querySelectorAll('.reveal');
-
-  if (!('IntersectionObserver' in window)) {
-    revealElements.forEach((element) => element.classList.add('visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.12
-  });
-
-  revealElements.forEach((element) => observer.observe(element));
 }
 
 if (openCartBtn) {
@@ -186,43 +159,19 @@ if (cartBackdrop) {
 }
 
 if (cartItemsContainer) {
-  cartItemsContainer.addEventListener('click', (event) => {
+  cartItemsContainer.addEventListener('click', event => {
     const button = event.target.closest('[data-action]');
     if (!button) return;
-
-    const action = button.dataset.action;
-    const key = button.dataset.key;
-    changeQuantity(key, action);
+    changeItem(button.dataset.key, button.dataset.action);
   });
 }
 
-if (checkoutBtn) {
-  checkoutBtn.addEventListener('click', () => {
-    if (!cart.length) {
-      alert('Tu carrito está vacío.');
-      return;
-    }
-
-    alert('Demo funcional: aquí puedes integrar Wompi, Mercado Pago o tu backend.');
-  });
-}
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  const navAnchors = navLinks.querySelectorAll('a');
-  navAnchors.forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    });
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
   });
 }
 
 loadCart();
-updateCartUI();
-bindProductButtons();
-bindReveal();
+updateCart();
+bindProducts();
