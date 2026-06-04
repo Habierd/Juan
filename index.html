@@ -3,662 +3,369 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Demo visual de tienda Juan Ramirez: tenis de moda y ropa urbana con carrito persistente." />
   <title>Juan Ramirez | Tienda de Tenis y Ropa</title>
 
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <nav class="nav">
-      <div class="logo">
-        <div class="logo-icon">JR</div>
-        <div>
-          <div class="logo-text-main">Juan Ramirez</div>
-          <div class="logo-text-sub">Tenis & Streetwear</div>
-        </div>
-      </div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-      <div class="nav-links">
-        <a href="#colecciones">Colecciones</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Principal">
+      <a href="#inicio" class="brand" aria-label="Juan Ramirez inicio">
+        <span class="brand-mark">JR</span>
+        <span>
+          <strong>Juan Ramirez</strong>
+          <small>Tenis & Streetwear</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+      <div class="nav-links" id="navLinks">
         <a href="#tenis">Tenis</a>
         <a href="#ropa">Ropa</a>
         <a href="#ofertas">Ofertas</a>
+        <a href="#destacados">Destacados</a>
       </div>
 
-      <div class="nav-cta">
-        <button class="btn btn-outline">Iniciar sesión</button>
-        <div class="cart-icon" id="openCart">
+      <div class="nav-actions">
+        <button class="btn btn-ghost" type="button">Colección 2026</button>
+        <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">
           <span>🛒</span>
           <span class="cart-count" id="cartCount">0</span>
-        </div>
+        </button>
       </div>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero" id="colecciones">
-      <div>
-        <div class="badge">
-          <span class="badge-dot"></span>
-          Lanzamiento exclusivo 2026
-        </div>
-        <h1 class="hero-title">
-          Tenis y streetwear que
-          <span>se sienten de otro nivel.</span>
-        </h1>
-        <p class="hero-subtitle">
-          Juan Ramirez selecciona tenis de moda y ropa premium con inspiración urbana. Diseñado para hinchas que quieren estilo de estadio, ciudad y contenido.
+  <main id="contenido">
+    <section class="hero container" id="inicio">
+      <div class="hero-copy reveal">
+        <span class="badge">Verde, urbano, premium</span>
+        <h1>La tienda <span>Juan Ramirez</span> para tenis de moda y ropa con presencia.</h1>
+        <p>
+          Una demo moderna para GitHub con estética profesional, animaciones fluidas, selección de talla,
+          carrito funcional y persistencia al reiniciar el navegador.
         </p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" onclick="scrollToSection('tenis')">
-            Explorar tenis
-            <span>→</span>
-          </button>
-          <button class="btn btn-outline" onclick="scrollToSection('ofertas')">
-            Ver ofertas
-          </button>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tenis">Explorar tenis</a>
+          <a class="btn btn-secondary" href="#ropa">Ver ropa</a>
         </div>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <strong>Envío a toda Colombia</strong>
-            <span>Entrega 2 - 5 días hábiles</span>
-          </div>
-          <div class="hero-meta-item">
-            <strong>Pagos 100% seguros</strong>
-            <span>PSE · Tarjeta · Contraentrega</span>
-          </div>
+        <div class="hero-stats">
+          <article>
+            <strong>+250</strong>
+            <span>Productos de temporada</span>
+          </article>
+          <article>
+            <strong>24h</strong>
+            <span>Atención de pedidos</span>
+          </article>
+          <article>
+            <strong>100%</strong>
+            <span>Demo front-end lista para GitHub</span>
+          </article>
         </div>
       </div>
 
-      <div class="hero-right">
+      <div class="hero-visual reveal delay-1">
         <div class="hero-card">
-          <div class="hero-product-tag">
-            <span></span>
-            Drop “Medellín Lights”
-          </div>
-
-          <div class="hero-product-main">
-            <div class="shoe-wrapper">
-              <div class="shoe-bg"></div>
-              <!-- HERO IMAGE -->
-              <div class="shoe-img">
-                <img src="https://source.unsplash.com/featured/800x600/?sneakers,green" 
-                     alt="JR Velocity Green sneakers">
-              </div>
-              <div class="shoe-shine"></div>
-            </div>
-
-            <div class="hero-info">
-              <h3>JR Velocity Green</h3>
-              <div class="hero-price">
-                <strong>$359.900</strong>
-                <span>$429.900</span>
-              </div>
-              <div class="hero-rating">
-                <span class="star">★ ★ ★ ★ ★</span>
-                <span>4.9 · 180 reviews</span>
-              </div>
-              <p>Drop inspirado en las luces del Atanasio. Mesh respirable, suela reactiva y detalles verde nacional.</p>
-
-              <!-- Talla selector para el héroe -->
-              <div class="size-selector" style="margin-top:0.8rem;">
-                <label for="heroSize" class="size-label">Talla:</label>
-                <select id="heroSize" class="size-select">
-                  <option value="38">38</option>
-                  <option value="39" selected>39</option>
-                  <option value="40">40</option>
-                  <option value="41">41</option>
-                  <option value="42">42</option>
-                </select>
-              </div>
-
-              <button class="btn btn-primary" style="margin-top:0.4rem;" onclick="addFeaturedToCart()">
-                Añadir al carrito
-              </button>
-            </div>
-          </div>
-
-          <div class="hero-mini-grid">
-            <div class="mini-card">
-              <span>Drop limitado</span>
-              <strong>Solo 120 pares</strong>
-            </div>
-            <div class="mini-card">
-              <span>Garantía</span>
-              <strong>90 días por defecto</strong>
-            </div>
-            <div class="mini-card">
-              <span>Envío</span>
-              <strong>Gratis desde $250K</strong>
+          <img src="./assets/hero-tenis.svg" alt="Tenis verdes de la colección principal" width="700" height="560" />
+          <div class="hero-card-content">
+            <p class="hero-label">Drop principal</p>
+            <h2>Velocity Green</h2>
+            <p>Tenis con acabado premium, identidad urbana y paleta inspirada en el verde clásico.</p>
+            <div class="hero-price-row">
+              <strong>$359.900</strong>
+              <span>$429.900</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRODUCT GRID -->
-    <section class="section" id="tenis">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Tenis destacados</h2>
-          <p class="section-subtitle">
-            Modelos curados por Juan Ramirez para combinar con outfits urbanos, minimalistas y deportivos.
-          </p>
-        </div>
-        <div class="section-filters">
-          <button class="chip active">Todo</button>
-          <button class="chip">Tenis</button>
-          <button class="chip">Running</button>
-          <button class="chip">Lifestyle</button>
-        </div>
+    <section class="section container" id="destacados">
+      <div class="section-head reveal">
+        <p class="section-kicker">Capacidades visuales y técnicas</p>
+        <h2>Una demo que sí funciona</h2>
+        <p>
+          Las imágenes ya no dependen de enlaces externos inestables: ahora son archivos SVG locales dentro del proyecto,
+          por eso sí se verán en Visual Studio Code, Live Server y GitHub Pages.
+        </p>
       </div>
 
-      <div class="products-grid" id="productGrid">
-        <!-- CARD 1 -->
-        <article class="product-card" data-id="1" data-category="shoe">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Nuevo</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?sneakers,street" 
-                   alt="JR Street Pulse sneakers">
-            </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <h3>Imágenes locales</h3>
+          <p>Se cargan desde <code>./assets/</code>, evitando errores por bloqueo, hotlinking o URLs rotas.</p>
+        </article>
+        <article class="feature-card reveal delay-1">
+          <h3>Carrito persistente</h3>
+          <p>El carrito se guarda en <code>localStorage</code> y se restaura al volver a abrir el navegador.</p>
+        </article>
+        <article class="feature-card reveal delay-2">
+          <h3>Selección de talla</h3>
+          <p>Cada producto permite elegir talla antes de agregarlo, y se guarda como variante independiente.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="tenis">
+      <div class="section-head reveal">
+        <p class="section-kicker">Tenis destacados</p>
+        <h2>Modelos con identidad propia</h2>
+      </div>
+
+      <div class="product-grid" id="shoeGrid">
+        <article class="product-card reveal" data-id="1">
+          <div class="product-media">
+            <img src="./assets/tenis-1.svg" alt="Tenis JR Street Pulse" width="520" height="420" loading="lazy" />
           </div>
-          <div class="product-info">
-            <h3 class="product-name">JR Street Pulse</h3>
+          <div class="product-body">
+            <span class="product-tag">Nuevo</span>
+            <h3>JR Street Pulse</h3>
+            <p>Tenis lifestyle con acentos verde-blanco y silueta urbana.</p>
             <div class="product-meta">
-              <span>Colores: Verde / Blanco</span>
-              <span class="product-size">Tallas 38 - 44</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$289.900</strong>
-                <span>$339.900</span>
-              </div>
+              <strong>$289.900</strong>
               <span>4.8 ★</span>
             </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size1" class="size-label">Talla:</label>
-              <select id="size1" class="size-select">
+            <label class="field-label">Talla
+              <select class="size-select">
                 <option value="38">38</option>
                 <option value="39">39</option>
-                <option value="40">40</option>
+                <option value="40" selected>40</option>
                 <option value="41">41</option>
                 <option value="42">42</option>
                 <option value="43">43</option>
-                <option value="44">44</option>
               </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </article>
 
-        <!-- CARD 2 -->
-        <article class="product-card" data-id="2" data-category="shoe">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Más vendido</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?running,shoe" 
-                   alt="Nacional Runner Pro sneakers">
-            </div>
+        <article class="product-card reveal delay-1" data-id="2">
+          <div class="product-media">
+            <img src="./assets/tenis-2.svg" alt="Tenis Nacional Runner Pro" width="520" height="420" loading="lazy" />
           </div>
-          <div class="product-info">
-            <h3 class="product-name">Nacional Runner Pro</h3>
+          <div class="product-body">
+            <span class="product-tag">Top ventas</span>
+            <h3>Nacional Runner Pro</h3>
+            <p>Diseño técnico, suela reactiva y carácter deportivo premium.</p>
             <div class="product-meta">
-              <span>Running urbano</span>
-              <span class="product-size">Tallas 39 - 45</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$319.900</strong>
-                <span>$379.900</span>
-              </div>
+              <strong>$319.900</strong>
               <span>5.0 ★</span>
             </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size2" class="size-label">Talla:</label>
-              <select id="size2" class="size-select">
+            <label class="field-label">Talla
+              <select class="size-select">
                 <option value="39">39</option>
                 <option value="40">40</option>
-                <option value="41">41</option>
+                <option value="41" selected>41</option>
                 <option value="42">42</option>
                 <option value="43">43</option>
                 <option value="44">44</option>
-                <option value="45">45</option>
               </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </article>
 
-        <!-- CARD 3 -->
-        <article class="product-card" data-id="3" data-category="shoe">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Drop limitado</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?night,sneaker" 
-                   alt="Medallo Night Ride sneakers">
-            </div>
+        <article class="product-card reveal delay-2" data-id="3">
+          <div class="product-media">
+            <img src="./assets/tenis-3.svg" alt="Tenis Medallo Night Ride" width="520" height="420" loading="lazy" />
           </div>
-          <div class="product-info">
-            <h3 class="product-name">Medallo Night Ride</h3>
+          <div class="product-body">
+            <span class="product-tag">Edición limitada</span>
+            <h3>Medallo Night Ride</h3>
+            <p>Base oscura con reflejos verdes para una estética nocturna de alto impacto.</p>
             <div class="product-meta">
-              <span>Detalles reflectivos</span>
-              <span class="product-size">Tallas 37 - 43</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$349.900</strong>
-                <span>$399.900</span>
-              </div>
-              <span>4.7 ★</span>
-            </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size3" class="size-label">Talla:</label>
-              <select id="size3" class="size-select">
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 4 -->
-        <article class="product-card" data-id="4" data-category="shoe">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Outlet</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?minimal,shoe" 
-                   alt="JR Minimal Core sneakers">
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">JR Minimal Core</h3>
-            <div class="product-meta">
-              <span>Look limpio</span>
-              <span class="product-size">Tallas 36 - 42</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$229.900</strong>
-                <span>$299.900</span>
-              </div>
-              <span>4.5 ★</span>
-            </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size4" class="size-label">Talla:</label>
-              <select id="size4" class="size-select">
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ROPA -->
-    <section class="section" id="ropa">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Ropa para completar el outfit</h2>
-          <p class="section-subtitle">
-            Buzos, camisetas y joggers con la misma línea estética: verde, minimal, urbano.
-          </p>
-        </div>
-      </div>
-
-      <div class="products-grid">
-        <!-- CARD 5 -->
-        <article class="product-card" data-id="5" data-category="cloth">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Nuevo</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?hoodie,green" 
-                   alt="Buzo Oversize Nacional Mindset">
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Buzo Oversize “Nacional Mindset”</h3>
-            <div class="product-meta">
-              <span>Verde bosque</span>
-              <span class="product-size">S · M · L · XL</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$199.900</strong>
-                <span>$239.900</span>
-              </div>
+              <strong>$349.900</strong>
               <span>4.9 ★</span>
             </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size5" class="size-label">Talla:</label>
-              <select id="size5" class="size-select">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
+            <label class="field-label">Talla
+              <select class="size-select">
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39" selected>39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
               </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 6 -->
-        <article class="product-card" data-id="6" data-category="cloth">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Streetwear</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?tshirt,city" 
-                   alt="Camiseta Bogotá Nights">
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Camiseta “Bogotá Nights”</h3>
-            <div class="product-meta">
-              <span>Logo minimal</span>
-              <span class="product-size">S · M · L · XL</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$89.900</strong>
-                <span>$109.900</span>
-              </div>
-              <span>4.7 ★</span>
-            </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size6" class="size-label">Talla:</label>
-              <select id="size6" class="size-select">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 7 -->
-        <article class="product-card" data-id="7" data-category="cloth">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Joggers</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?jogger,fabric" 
-                   alt="Jogger Tech Fabric">
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Jogger Tech Fabric</h3>
-            <div class="product-meta">
-              <span>Secado rápido</span>
-              <span class="product-size">S · M · L · XL</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$149.900</strong>
-                <span>$179.900</span>
-              </div>
-              <span>4.6 ★</span>
-            </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size7" class="size-label">Talla:</label>
-              <select id="size7" class="size-select">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 8 -->
-        <article class="product-card" data-id="8" data-category="cloth">
-          <div class="product-img-wrapper">
-            <span class="product-tag">Set</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?outfit,set" 
-                   alt="Combo camiseta + jogger">
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Combo camiseta + jogger</h3>
-            <div class="product-meta">
-              <span>Outfit completo</span>
-              <span class="product-size">S · M · L · XL</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$259.900</strong>
-                <span>$309.900</span>
-              </div>
-              <span>4.8 ★</span>
-            </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size8" class="size-label">Talla:</label>
-              <select id="size8" class="size-select">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- OFERTAS -->
-    <section class="section" id="ofertas">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Ofertas rápidas</h2>
-          <p class="section-subtitle">
-            Ideal para mostrar un módulo de descuentos en tu demo. Lógica del carrito incluida.
-          </p>
-        </div>
+    <section class="section container" id="ropa">
+      <div class="section-head reveal">
+        <p class="section-kicker">Streetwear</p>
+        <h2>Ropa para cerrar el outfit</h2>
       </div>
-      <div class="products-grid">
-        <!-- CARD 9 -->
-        <article class="product-card" data-id="9" data-category="cloth">
-          <div class="product-img-wrapper">
-            <span class="product-tag">-30%</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?cap,hat" 
-                   alt="Gorra Snapback JR">
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Gorra Snapback JR</h3>
-            <div class="product-meta">
-              <span>Logo frontal bordado</span>
-              <span class="product-size">Talla única</span>
-            </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$59.900</strong>
-                <span>$79.900</span>
-              </div>
-              <span>4.6 ★</span>
-            </div>
-            <!-- Talla selector (única opción) -->
-            <div class="size-selector">
-              <label for="size9" class="size-label">Talla:</label>
-              <select id="size9" class="size-select">
-                <option value="Única">Única</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
-            </div>
-          </div>
-        </article>
 
-        <!-- CARD 10 -->
-        <article class="product-card" data-id="10" data-category="cloth">
-          <div class="product-img-wrapper">
-            <span class="product-tag">-25%</span>
-            <div class="product-img">
-              <img src="https://source.unsplash.com/featured/400x300/?training,shirt" 
-                   alt="Camiseta training Focus">
-            </div>
+      <div class="product-grid" id="clothesGrid">
+        <article class="product-card reveal" data-id="4">
+          <div class="product-media">
+            <img src="./assets/ropa-1.svg" alt="Buzo oversize verde Nacional Mindset" width="520" height="420" loading="lazy" />
           </div>
-          <div class="product-info">
-            <h3 class="product-name">Camiseta training “Focus”</h3>
+          <div class="product-body">
+            <span class="product-tag">Oversize</span>
+            <h3>Buzo Nacional Mindset</h3>
+            <p>Buzo pesado con capota, frente limpio y color verde bosque.</p>
             <div class="product-meta">
-              <span>Tejido respirable</span>
-              <span class="product-size">S · M · L · XL</span>
+              <strong>$199.900</strong>
+              <span>4.8 ★</span>
             </div>
-            <div class="product-meta">
-              <div class="product-price">
-                <strong>$74.900</strong>
-                <span>$99.900</span>
-              </div>
-              <span>4.5 ★</span>
-            </div>
-            <!-- Talla selector -->
-            <div class="size-selector">
-              <label for="size10" class="size-label">Talla:</label>
-              <select id="size10" class="size-select">
+            <label class="field-label">Talla
+              <select class="size-select">
                 <option value="S">S</option>
-                <option value="M">M</option>
+                <option value="M" selected>M</option>
                 <option value="L">L</option>
                 <option value="XL">XL</option>
               </select>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-id="5">
+          <div class="product-media">
+            <img src="./assets/ropa-2.svg" alt="Camiseta urbana Bogotá Nights" width="520" height="420" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="product-tag">Streetwear</span>
+            <h3>Camiseta Bogotá Nights</h3>
+            <p>Camiseta premium con fit relajado y gráfica minimalista.</p>
+            <div class="product-meta">
+              <strong>$89.900</strong>
+              <span>4.7 ★</span>
             </div>
-            <div class="product-actions">
-              <button class="btn-icon" title="Favorito">♡</button>
-              <button class="btn-add-cart">
-                <span>Agregar</span> <span>+</span>
-              </button>
+            <label class="field-label">Talla
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L" selected>L</option>
+                <option value="XL">XL</option>
+              </select>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-2" data-id="6">
+          <div class="product-media">
+            <img src="./assets/ropa-3.svg" alt="Jogger técnico verde oscuro" width="520" height="420" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="product-tag">Tech fit</span>
+            <h3>Jogger Tech Fabric</h3>
+            <p>Jogger de textura técnica, limpio y funcional para outfits diarios.</p>
+            <div class="product-meta">
+              <strong>$149.900</strong>
+              <span>4.6 ★</span>
             </div>
+            <label class="field-label">Talla
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="ofertas">
+      <div class="section-head reveal">
+        <p class="section-kicker">Ofertas</p>
+        <h2>Accesorios y básicos</h2>
+      </div>
+
+      <div class="product-grid offers-grid" id="offersGrid">
+        <article class="product-card reveal" data-id="7">
+          <div class="product-media">
+            <img src="./assets/accesorio-1.svg" alt="Gorra Snapback JR verde y negra" width="520" height="420" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="product-tag">-30%</span>
+            <h3>Gorra Snapback JR</h3>
+            <p>Gorra estructurada para completar el look.</p>
+            <div class="product-meta">
+              <strong>$59.900</strong>
+              <span>Talla única</span>
+            </div>
+            <label class="field-label">Talla
+              <select class="size-select">
+                <option value="Única">Única</option>
+              </select>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal delay-1" data-id="8">
+          <div class="product-media">
+            <img src="./assets/ropa-4.svg" alt="Camiseta deportiva Focus verde oscuro" width="520" height="420" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="product-tag">-25%</span>
+            <h3>Camiseta Focus Training</h3>
+            <p>Tejido respirable, visual limpio y perfil deportivo.</p>
+            <div class="product-meta">
+              <strong>$74.900</strong>
+              <span>4.5 ★</span>
+            </div>
+            <label class="field-label">Talla
+              <select class="size-select">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </label>
+            <button class="btn btn-primary btn-add-cart" type="button">Agregar al carrito</button>
           </div>
         </article>
       </div>
     </section>
   </main>
 
-  <!-- CART PANEL -->
-  <div class="cart-panel-backdrop" id="cartBackdrop"></div>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
 
-  <aside class="cart-panel" id="cartPanel">
+  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compra">
     <div class="cart-header">
       <div>
-        <div class="cart-title">Tu carrito</div>
-        <div class="cart-tag" id="cartTag">Carrito vacío</div>
+        <p class="section-kicker">Compra actual</p>
+        <h2>Tu carrito</h2>
       </div>
-      <button class="cart-close" id="closeCart" aria-label="Cerrar carrito">
-        ✕
-      </button>
+      <button class="icon-btn" id="closeCart" type="button" aria-label="Cerrar carrito">✕</button>
     </div>
 
-    <div class="cart-body" id="cartItemsContainer">
-      <div class="cart-empty">Aún no has agregado productos.</div>
+    <div class="cart-items" id="cartItemsContainer">
+      <div class="cart-empty">No has agregado productos todavía.</div>
     </div>
 
     <div class="cart-footer">
-      <div class="cart-summary-row">
+      <div class="cart-line">
         <span>Subtotal</span>
         <strong id="cartSubtotal">$0</strong>
       </div>
-      <div class="cart-summary-row">
-        <span>Envío estimado</span>
-        <span class="cart-badge" id="cartShipping">Calculado en checkout</span>
+      <div class="cart-line">
+        <span>Envío</span>
+        <strong id="cartShipping">Calculado en checkout</strong>
       </div>
-      <button class="btn-checkout" id="checkoutBtn">
-        Finalizar compra
-        <span>↳</span>
-      </button>
+      <button class="btn btn-primary btn-full" id="checkoutBtn" type="button">Finalizar compra</button>
     </div>
   </aside>
 
-  <footer>
-    <div class="footer-inner">
-      <span>© 2026 <strong>Juan Ramirez</strong>. Demo visual para GitHub.</span>
-      <div class="footer-links">
-        <a href="#colecciones">Inicio</a>
-        <a href="#tenis">Tenis</a>
-        <a href="#ropa">Ropa</a>
-        <a href="#ofertas">Ofertas</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script.js" defer></script>
+  <script src="./script.js"></script>
 </body>
 </html>
