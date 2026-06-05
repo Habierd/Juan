@@ -146,17 +146,28 @@ function bindProducts() {
   });
 }
 
-if (openCartBtn) {
-  openCartBtn.addEventListener('click', openCart);
+function bindReveal() {
+  const elements = document.querySelectorAll('.reveal');
+
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(element => element.classList.add('visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  elements.forEach(element => observer.observe(element));
 }
 
-if (closeCartBtn) {
-  closeCartBtn.addEventListener('click', closeCart);
-}
-
-if (cartBackdrop) {
-  cartBackdrop.addEventListener('click', closeCart);
-}
+if (openCartBtn) openCartBtn.addEventListener('click', openCart);
+if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+if (cartBackdrop) cartBackdrop.addEventListener('click', closeCart);
 
 if (cartItemsContainer) {
   cartItemsContainer.addEventListener('click', event => {
@@ -175,3 +186,4 @@ if (menuBtn && navLinks) {
 loadCart();
 updateCart();
 bindProducts();
+bindReveal();

@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07110d" />
   <title>Juan Ramirez | Tenis y Ropa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="header">
+  <header class="topbar">
     <div class="container nav">
-      <a href="#inicio" class="logo">
-        <span class="logo-mark">JR</span>
-        <span class="logo-text">
+      <a href="#inicio" class="brand" aria-label="Juan Ramirez inicio">
+        <span class="brand-mark">JR</span>
+        <span class="brand-copy">
           <strong>Juan Ramirez</strong>
           <small>Tenis & Streetwear</small>
         </span>
       </a>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">☰</button>
 
       <nav class="nav-links" id="navLinks">
         <a href="#tenis">Tenis</a>
@@ -26,141 +29,102 @@
         <a href="#ofertas">Ofertas</a>
       </nav>
 
-      <div class="nav-actions">
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">☰</button>
-        <button class="cart-btn" id="openCart" type="button" aria-label="Abrir carrito">
-          🛒
-          <span id="cartCount">0</span>
-        </button>
-      </div>
+      <button class="cart-btn" id="openCart" type="button" aria-label="Abrir carrito">
+        🛒
+        <span id="cartCount">0</span>
+      </button>
     </div>
   </header>
 
   <main>
     <section class="hero container" id="inicio">
       <div class="hero-copy">
-        <span class="pill">Nueva colección</span>
-        <h1>Tenis y ropa con estilo urbano.</h1>
-        <p>Una muestra visual moderna para exhibir productos de moda, tenis y streetwear.</p>
+        <span class="eyebrow">Colección 2026</span>
+        <h1>Moda urbana con presencia, ritmo y carácter.</h1>
+        <p>Una tienda visual para ropa y calzado con una estética editorial moderna y una experiencia pensada para iPhone.</p>
         <div class="hero-actions">
-          <a href="#tenis" class="btn btn-primary">Ver tenis</a>
+          <a href="#tenis" class="btn btn-primary">Explorar tenis</a>
           <a href="#ropa" class="btn btn-secondary">Ver ropa</a>
         </div>
       </div>
 
       <div class="hero-visual">
         <article class="hero-card">
-          <img
-            src="https://picsum.photos/seed/jr-hero/700/520"
-            alt="Imagen destacada de colección urbana"
-            width="700"
-            height="520"
-            loading="eager"
-          />
-          <div class="hero-info">
-            <span class="pill small">Destacado</span>
+          <img src="https://picsum.photos/seed/editorial-shoes/900/1100" alt="Zapatos de moda urbana en una fotografía editorial" width="900" height="1100" loading="eager" decoding="async" />
+          <div class="hero-card-content">
+            <span class="pill">Nuevo drop</span>
             <h2>Velocity Green</h2>
-            <p>Selección urbana con enfoque premium.</p>
-            <strong>$359.900</strong>
+            <p>Tenis con alma premium y contraste visual.</p>
           </div>
         </article>
       </div>
     </section>
 
+    <section class="showcase container">
+      <article class="feature-banner reveal">
+        <div>
+          <span class="eyebrow">Editorial</span>
+          <h2>Visual limpio, moderno y con energía.</h2>
+        </div>
+        <p>Imagen de marca fuerte, paleta sofisticada y movimiento suave para destacar cada producto sin saturar la pantalla.</p>
+      </article>
+    </section>
+
     <section class="section container" id="tenis">
-      <div class="section-title">
-        <span class="pill">Tenis</span>
+      <div class="section-head reveal">
+        <span class="eyebrow">Tenis</span>
         <h2>Modelos destacados</h2>
       </div>
 
-      <div class="grid-products">
-        <article class="card product-card" data-id="1">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/tenis-1/520/380"
-              alt="Tenis JR Street Pulse"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+      <div class="product-grid">
+        <article class="product-card reveal" data-id="1">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/sneaker-1/900/1100" alt="Tenis urbanos blancos y verdes" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">Nuevo</span>
             <h3>JR Street Pulse</h3>
-            <p>Tenis lifestyle con perfil limpio y presencia urbana.</p>
-            <div class="price-row">
-              <strong>$289.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Tenis lifestyle con silueta limpia y presencia urbana.</p>
+            <div class="price-row"><strong>$289.900</strong><span>Disponible</span></div>
             <label>Talla
               <select class="size-select">
-                <option>38</option>
-                <option>39</option>
-                <option selected>40</option>
-                <option>41</option>
-                <option>42</option>
+                <option>38</option><option>39</option><option selected>40</option><option>41</option><option>42</option>
               </select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
-        <article class="card product-card" data-id="2">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/tenis-2/520/380"
-              alt="Tenis Nacional Runner Pro"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+        <article class="product-card reveal delay-1" data-id="2">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/sneaker-2/900/1100" alt="Tenis deportivos oscuros con detalles verdes" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">Top ventas</span>
             <h3>Nacional Runner Pro</h3>
-            <p>Diseño deportivo con silueta moderna y detalles premium.</p>
-            <div class="price-row">
-              <strong>$319.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Diseño técnico y moderno para uso diario.</p>
+            <div class="price-row"><strong>$319.900</strong><span>Disponible</span></div>
             <label>Talla
               <select class="size-select">
-                <option>39</option>
-                <option>40</option>
-                <option selected>41</option>
-                <option>42</option>
-                <option>43</option>
+                <option>39</option><option>40</option><option selected>41</option><option>42</option><option>43</option>
               </select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
-        <article class="card product-card" data-id="3">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/tenis-3/520/380"
-              alt="Tenis Medallo Night Ride"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+        <article class="product-card reveal delay-2" data-id="3">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/sneaker-3/900/1100" alt="Tenis de edición limitada con estilo nocturno" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">Edición</span>
             <h3>Medallo Night Ride</h3>
-            <p>Acabado oscuro con estilo impactante para outfits urbanos.</p>
-            <div class="price-row">
-              <strong>$349.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Contraste fuerte para looks urbanos con más carácter.</p>
+            <div class="price-row"><strong>$349.900</strong><span>Disponible</span></div>
             <label>Talla
               <select class="size-select">
-                <option>37</option>
-                <option>38</option>
-                <option selected>39</option>
-                <option>40</option>
-                <option>41</option>
+                <option>37</option><option>38</option><option selected>39</option><option>40</option><option>41</option>
               </select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
@@ -170,97 +134,55 @@
     </section>
 
     <section class="section container" id="ropa">
-      <div class="section-title">
-        <span class="pill">Ropa</span>
-        <h2>Prendas para completar el look</h2>
+      <div class="section-head reveal">
+        <span class="eyebrow">Ropa</span>
+        <h2>Prendas para completar el outfit</h2>
       </div>
 
-      <div class="grid-products">
-        <article class="card product-card" data-id="4">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/ropa-1/520/380"
-              alt="Buzo Nacional Mindset"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+      <div class="product-grid">
+        <article class="product-card reveal" data-id="4">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/clothing-1/900/1100" alt="Buzo oversize verde de moda urbana" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">Oversize</span>
             <h3>Buzo Nacional Mindset</h3>
-            <p>Buzo con acabado limpio y look streetwear.</p>
-            <div class="price-row">
-              <strong>$199.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Buzo premium con caída amplia y presencia elegante.</p>
+            <div class="price-row"><strong>$199.900</strong><span>Disponible</span></div>
             <label>Talla
-              <select class="size-select">
-                <option>S</option>
-                <option selected>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
+              <select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
-        <article class="card product-card" data-id="5">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/ropa-2/520/380"
-              alt="Camiseta Bogotá Nights"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+        <article class="product-card reveal delay-1" data-id="5">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/clothing-2/900/1100" alt="Camiseta urbana minimalista" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">Streetwear</span>
             <h3>Camiseta Bogotá Nights</h3>
-            <p>Camiseta premium de visual minimalista.</p>
-            <div class="price-row">
-              <strong>$89.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Camiseta minimalista con actitud limpia y moderna.</p>
+            <div class="price-row"><strong>$89.900</strong><span>Disponible</span></div>
             <label>Talla
-              <select class="size-select">
-                <option>S</option>
-                <option>M</option>
-                <option selected>L</option>
-                <option>XL</option>
-              </select>
+              <select class="size-select"><option>S</option><option>M</option><option selected>L</option><option>XL</option></select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
-        <article class="card product-card" data-id="6">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/ropa-3/520/380"
-              alt="Jogger Tech Fabric"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+        <article class="product-card reveal delay-2" data-id="6">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/clothing-3/900/1100" alt="Jogger técnico oscuro" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">Tech fit</span>
             <h3>Jogger Tech Fabric</h3>
-            <p>Jogger con estilo limpio y silueta moderna.</p>
-            <div class="price-row">
-              <strong>$149.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Jogger de corte limpio para una silueta más pulida.</p>
+            <div class="price-row"><strong>$149.900</strong><span>Disponible</span></div>
             <label>Talla
-              <select class="size-select">
-                <option>S</option>
-                <option selected>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
+              <select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
@@ -269,64 +191,39 @@
     </section>
 
     <section class="section container" id="ofertas">
-      <div class="section-title">
-        <span class="pill">Ofertas</span>
+      <div class="section-head reveal">
+        <span class="eyebrow">Ofertas</span>
         <h2>Accesorios y básicos</h2>
       </div>
 
-      <div class="grid-products two-cols">
-        <article class="card product-card" data-id="7">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/accesorio-1/520/380"
-              alt="Gorra Snapback JR"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+      <div class="product-grid two-cols">
+        <article class="product-card reveal" data-id="7">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/accessory-1/900/1100" alt="Gorra urbana con estilo minimalista" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">-30%</span>
             <h3>Gorra Snapback JR</h3>
-            <p>Accesorio clásico para complementar el outfit.</p>
-            <div class="price-row">
-              <strong>$59.900</strong>
-              <span>Única</span>
-            </div>
+            <p>Accesorio clásico para rematar el outfit.</p>
+            <div class="price-row"><strong>$59.900</strong><span>Única</span></div>
             <label>Talla
-              <select class="size-select">
-                <option>Única</option>
-              </select>
+              <select class="size-select"><option>Única</option></select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
-        <article class="card product-card" data-id="8">
-          <div class="product-image">
-            <img
-              src="https://picsum.photos/seed/ropa-4/520/380"
-              alt="Camiseta Focus Training"
-              width="520"
-              height="380"
-              loading="lazy"
-            />
+        <article class="product-card reveal delay-1" data-id="8">
+          <div class="product-media">
+            <img src="https://picsum.photos/seed/accessory-2/900/1100" alt="Camiseta deportiva con estilo limpio" width="900" height="1100" loading="lazy" decoding="async" />
           </div>
           <div class="product-body">
             <span class="pill small">-25%</span>
             <h3>Camiseta Focus Training</h3>
-            <p>Prenda ligera con perfil deportivo y visual limpio.</p>
-            <div class="price-row">
-              <strong>$74.900</strong>
-              <span>Disponible</span>
-            </div>
+            <p>Prenda ligera con una vibra deportiva y moderna.</p>
+            <div class="price-row"><strong>$74.900</strong><span>Disponible</span></div>
             <label>Talla
-              <select class="size-select">
-                <option>S</option>
-                <option selected>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
+              <select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
             </label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
@@ -336,7 +233,6 @@
   </main>
 
   <div class="cart-backdrop" id="cartBackdrop"></div>
-
   <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
     <div class="cart-header">
       <h3>Tu carrito</h3>
