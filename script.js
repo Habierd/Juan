@@ -1,15 +1,13 @@
 const PRODUCTS = {
-  1: { id: 1, name: 'JR Street Pulse', price: 289900, emoji: '👟' },
-  2: { id: 2, name: 'Nacional Runner Pro', price: 319900, emoji: '👟' },
-  3: { id: 3, name: 'Medallo Night Ride', price: 349900, emoji: '👟' },
-  4: { id: 4, name: 'Buzo Nacional Mindset', price: 199900, emoji: '🧥' },
-  5: { id: 5, name: 'Camiseta Bogotá Nights', price: 89900, emoji: '👕' },
-  6: { id: 6, name: 'Jogger Tech Fabric', price: 149900, emoji: '👖' },
-  7: { id: 7, name: 'Gorra Snapback JR', price: 59900, emoji: '🧢' },
-  8: { id: 8, name: 'Camiseta Focus Training', price: 74900, emoji: '👕' }
+  1: { id: 1, name: 'JR Shadow One', price: 389900, emoji: '👟' },
+  2: { id: 2, name: 'Pulse Motion', price: 429900, emoji: '👟' },
+  3: { id: 3, name: 'Noir Velocity', price: 459900, emoji: '👟' },
+  4: { id: 4, name: 'Mono Layer Jacket', price: 299900, emoji: '🧥' },
+  5: { id: 5, name: 'City Form Tee', price: 119900, emoji: '👕' },
+  6: { id: 6, name: 'Graphite Jogger', price: 169900, emoji: '👖' }
 };
 
-const STORAGE_KEY = 'juan_ramirez_demo_cart';
+const STORAGE_KEY = 'juan_ramirez_radical_cart_v1';
 let cart = [];
 
 const openCartBtn = document.getElementById('openCart');
@@ -130,9 +128,7 @@ function changeItem(key, action) {
 }
 
 function bindProducts() {
-  const cards = document.querySelectorAll('.product-card');
-
-  cards.forEach(card => {
+  document.querySelectorAll('.product-card').forEach(card => {
     const button = card.querySelector('.btn-add-cart');
     const select = card.querySelector('.size-select');
 
@@ -150,17 +146,15 @@ function bindReveal() {
   const elements = document.querySelectorAll('.reveal');
 
   if (!('IntersectionObserver' in window)) {
-    elements.forEach(element => element.classList.add('visible'));
+    elements.forEach(el => el.classList.add('visible'));
     return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.15 });
 
   elements.forEach(element => observer.observe(element));
 }
@@ -169,17 +163,15 @@ if (openCartBtn) openCartBtn.addEventListener('click', openCart);
 if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
 if (cartBackdrop) cartBackdrop.addEventListener('click', closeCart);
 
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+}
+
 if (cartItemsContainer) {
   cartItemsContainer.addEventListener('click', event => {
     const button = event.target.closest('[data-action]');
     if (!button) return;
     changeItem(button.dataset.key, button.dataset.action);
-  });
-}
-
-if (menuBtn && navLinks) {
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
   });
 }
 

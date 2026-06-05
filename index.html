@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07110d" />
-  <title>Juan Ramirez | Tenis y Ropa</title>
+  <meta name="theme-color" content="#05060a" />
+  <title>Juan Ramirez | Moda Radical</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <div class="bg-noise"></div>
+
   <header class="topbar">
     <div class="container nav">
       <a href="#inicio" class="brand" aria-label="Juan Ramirez inicio">
         <span class="brand-mark">JR</span>
         <span class="brand-copy">
           <strong>Juan Ramirez</strong>
-          <small>Tenis & Streetwear</small>
+          <small>Future Fashion Lab</small>
         </span>
       </a>
 
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">☰</button>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#tenis">Tenis</a>
+        <a href="#zapatos">Zapatos</a>
         <a href="#ropa">Ropa</a>
-        <a href="#ofertas">Ofertas</a>
+        <a href="#drops">Drops</a>
       </nav>
 
       <button class="cart-btn" id="openCart" type="button" aria-label="Abrir carrito">
@@ -38,95 +40,78 @@
 
   <main>
     <section class="hero container" id="inicio">
-      <div class="hero-copy">
-        <span class="eyebrow">Colección 2026</span>
-        <h1>Moda urbana con presencia, ritmo y carácter.</h1>
-        <p>Una tienda visual para ropa y calzado con una estética editorial moderna y una experiencia pensada para iPhone.</p>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Nueva era</span>
+        <h1>Moda radical, precisa y ultra moderna.</h1>
+        <p>Una tienda visual pensada para impresionar en iPhone: tipografía fuerte, contraste elegante, motion suave y producto realista al centro de todo.</p>
         <div class="hero-actions">
-          <a href="#tenis" class="btn btn-primary">Explorar tenis</a>
-          <a href="#ropa" class="btn btn-secondary">Ver ropa</a>
+          <a href="#zapatos" class="btn btn-primary">Explorar colección</a>
+          <a href="#ropa" class="btn btn-secondary">Ver prendas</a>
         </div>
       </div>
 
-      <div class="hero-visual">
-        <article class="hero-card">
-          <img src="https://picsum.photos/seed/editorial-shoes/900/1100" alt="Zapatos de moda urbana en una fotografía editorial" width="900" height="1100" loading="eager" decoding="async" />
-          <div class="hero-card-content">
-            <span class="pill">Nuevo drop</span>
-            <h2>Velocity Green</h2>
-            <p>Tenis con alma premium y contraste visual.</p>
+      <div class="hero-stack reveal delay-1">
+        <article class="hero-main">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80" alt="Zapatillas deportivas de producto sobre fondo oscuro" width="1200" height="1200" loading="eager" decoding="async" />
+          <div class="hero-overlay">
+            <span class="pill">Drop 01</span>
+            <h2>Alpha Runner</h2>
+            <p>Performance visual con energía de lujo técnico.</p>
           </div>
         </article>
+        <div class="hero-metrics">
+          <div><strong>+120</strong><span>Productos</span></div>
+          <div><strong>24h</strong><span>Re-stock</span></div>
+          <div><strong>5★</strong><span>Calidad</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="showcase container">
-      <article class="feature-banner reveal">
-        <div>
-          <span class="eyebrow">Editorial</span>
-          <h2>Visual limpio, moderno y con energía.</h2>
-        </div>
-        <p>Imagen de marca fuerte, paleta sofisticada y movimiento suave para destacar cada producto sin saturar la pantalla.</p>
-      </article>
+    <section class="marquee">
+      <div class="marquee-track">
+        <span>MODA RADICAL</span><span>PRODUCTO REAL</span><span>ANIMACIONES MODERNAS</span><span>UX PARA IPHONE</span><span>CALZADO + ROPA</span><span>MODA RADICAL</span><span>PRODUCTO REAL</span><span>ANIMACIONES MODERNAS</span><span>UX PARA IPHONE</span><span>CALZADO + ROPA</span>
+      </div>
     </section>
 
-    <section class="section container" id="tenis">
+    <section class="section container" id="zapatos">
       <div class="section-head reveal">
-        <span class="eyebrow">Tenis</span>
-        <h2>Modelos destacados</h2>
+        <span class="eyebrow">Zapatos</span>
+        <h2>Calzado con presencia real</h2>
       </div>
 
       <div class="product-grid">
         <article class="product-card reveal" data-id="1">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/sneaker-1/900/1100" alt="Tenis urbanos blancos y verdes" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
+          <div class="product-media"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80" alt="Tenis blancos y negros en fotografía de producto" width="1200" height="1200" loading="lazy" decoding="async" /></div>
           <div class="product-body">
             <span class="pill small">Nuevo</span>
-            <h3>JR Street Pulse</h3>
-            <p>Tenis lifestyle con silueta limpia y presencia urbana.</p>
-            <div class="price-row"><strong>$289.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select">
-                <option>38</option><option>39</option><option selected>40</option><option>41</option><option>42</option>
-              </select>
-            </label>
+            <h3>JR Shadow One</h3>
+            <p>Minimal, afilado y listo para elevar cualquier outfit.</p>
+            <div class="price-row"><strong>$389.900</strong><span>En stock</span></div>
+            <label>Talla<select class="size-select"><option>38</option><option>39</option><option selected>40</option><option>41</option><option>42</option></select></label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
         <article class="product-card reveal delay-1" data-id="2">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/sneaker-2/900/1100" alt="Tenis deportivos oscuros con detalles verdes" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
+          <div class="product-media"><img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=80" alt="Tenis deportivos modernos sobre fondo neutro" width="1200" height="1200" loading="lazy" decoding="async" /></div>
           <div class="product-body">
-            <span class="pill small">Top ventas</span>
-            <h3>Nacional Runner Pro</h3>
-            <p>Diseño técnico y moderno para uso diario.</p>
-            <div class="price-row"><strong>$319.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select">
-                <option>39</option><option>40</option><option selected>41</option><option>42</option><option>43</option>
-              </select>
-            </label>
+            <span class="pill small">Signature</span>
+            <h3>Pulse Motion</h3>
+            <p>Diseño técnico con silueta limpia y carácter futurista.</p>
+            <div class="price-row"><strong>$429.900</strong><span>En stock</span></div>
+            <label>Talla<select class="size-select"><option>39</option><option>40</option><option selected>41</option><option>42</option><option>43</option></select></label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
         <article class="product-card reveal delay-2" data-id="3">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/sneaker-3/900/1100" alt="Tenis de edición limitada con estilo nocturno" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
+          <div class="product-media"><img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1200&q=80" alt="Tenis deportivos en estilo editorial de producto" width="1200" height="1200" loading="lazy" decoding="async" /></div>
           <div class="product-body">
-            <span class="pill small">Edición</span>
-            <h3>Medallo Night Ride</h3>
-            <p>Contraste fuerte para looks urbanos con más carácter.</p>
-            <div class="price-row"><strong>$349.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select">
-                <option>37</option><option>38</option><option selected>39</option><option>40</option><option>41</option>
-              </select>
-            </label>
+            <span class="pill small">Limited</span>
+            <h3>Noir Velocity</h3>
+            <p>Oscuro, agresivo y perfectamente equilibrado.</p>
+            <div class="price-row"><strong>$459.900</strong><span>Últimas unidades</span></div>
+            <label>Talla<select class="size-select"><option>37</option><option>38</option><option selected>39</option><option>40</option><option>41</option></select></label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
@@ -136,98 +121,57 @@
     <section class="section container" id="ropa">
       <div class="section-head reveal">
         <span class="eyebrow">Ropa</span>
-        <h2>Prendas para completar el outfit</h2>
+        <h2>Prendas con vibra editorial</h2>
       </div>
 
       <div class="product-grid">
         <article class="product-card reveal" data-id="4">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/clothing-1/900/1100" alt="Buzo oversize verde de moda urbana" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
+          <div class="product-media"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80" alt="Chaqueta y ropa urbana en fotografía de moda" width="1200" height="1200" loading="lazy" decoding="async" /></div>
           <div class="product-body">
-            <span class="pill small">Oversize</span>
-            <h3>Buzo Nacional Mindset</h3>
-            <p>Buzo premium con caída amplia y presencia elegante.</p>
-            <div class="price-row"><strong>$199.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-            </label>
+            <span class="pill small">Oversized</span>
+            <h3>Mono Layer Jacket</h3>
+            <p>Capas limpias con estética premium y moderna.</p>
+            <div class="price-row"><strong>$299.900</strong><span>Disponible</span></div>
+            <label>Talla<select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select></label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
         <article class="product-card reveal delay-1" data-id="5">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/clothing-2/900/1100" alt="Camiseta urbana minimalista" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
+          <div class="product-media"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80" alt="Camiseta y ropa casual de estilo urbano" width="1200" height="1200" loading="lazy" decoding="async" /></div>
           <div class="product-body">
-            <span class="pill small">Streetwear</span>
-            <h3>Camiseta Bogotá Nights</h3>
-            <p>Camiseta minimalista con actitud limpia y moderna.</p>
-            <div class="price-row"><strong>$89.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select"><option>S</option><option>M</option><option selected>L</option><option>XL</option></select>
-            </label>
+            <span class="pill small">Core</span>
+            <h3>City Form Tee</h3>
+            <p>Una camiseta minimalista para looks limpios y sofisticados.</p>
+            <div class="price-row"><strong>$119.900</strong><span>Disponible</span></div>
+            <label>Talla<select class="size-select"><option>S</option><option>M</option><option selected>L</option><option>XL</option></select></label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
 
         <article class="product-card reveal delay-2" data-id="6">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/clothing-3/900/1100" alt="Jogger técnico oscuro" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
+          <div class="product-media"><img src="https://images.unsplash.com/photo-1483985988355-5f6f4b93c8a4?auto=format&fit=crop&w=1200&q=80" alt="Jogger y prendas deportivas de estudio" width="1200" height="1200" loading="lazy" decoding="async" /></div>
           <div class="product-body">
-            <span class="pill small">Tech fit</span>
-            <h3>Jogger Tech Fabric</h3>
-            <p>Jogger de corte limpio para una silueta más pulida.</p>
-            <div class="price-row"><strong>$149.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-            </label>
+            <span class="pill small">Tech</span>
+            <h3>Graphite Jogger</h3>
+            <p>Textura limpia, corte moderno y caída precisa.</p>
+            <div class="price-row"><strong>$169.900</strong><span>Disponible</span></div>
+            <label>Talla<select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select></label>
             <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section container" id="ofertas">
+    <section class="section container" id="drops">
       <div class="section-head reveal">
-        <span class="eyebrow">Ofertas</span>
-        <h2>Accesorios y básicos</h2>
+        <span class="eyebrow">Drops</span>
+        <h2>Accesorios y piezas clave</h2>
       </div>
-
-      <div class="product-grid two-cols">
-        <article class="product-card reveal" data-id="7">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/accessory-1/900/1100" alt="Gorra urbana con estilo minimalista" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
-          <div class="product-body">
-            <span class="pill small">-30%</span>
-            <h3>Gorra Snapback JR</h3>
-            <p>Accesorio clásico para rematar el outfit.</p>
-            <div class="price-row"><strong>$59.900</strong><span>Única</span></div>
-            <label>Talla
-              <select class="size-select"><option>Única</option></select>
-            </label>
-            <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
-          </div>
-        </article>
-
-        <article class="product-card reveal delay-1" data-id="8">
-          <div class="product-media">
-            <img src="https://picsum.photos/seed/accessory-2/900/1100" alt="Camiseta deportiva con estilo limpio" width="900" height="1100" loading="lazy" decoding="async" />
-          </div>
-          <div class="product-body">
-            <span class="pill small">-25%</span>
-            <h3>Camiseta Focus Training</h3>
-            <p>Prenda ligera con una vibra deportiva y moderna.</p>
-            <div class="price-row"><strong>$74.900</strong><span>Disponible</span></div>
-            <label>Talla
-              <select class="size-select"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-            </label>
-            <button class="btn btn-primary btn-add-cart" type="button">Agregar</button>
-          </div>
-        </article>
+      <div class="feature-strip reveal">
+        <article><strong>Delivery rápido</strong><span>Compra simple, visual clara.</span></article>
+        <article><strong>Look premium</strong><span>Contraste fuerte y moderno.</span></article>
+        <article><strong>Carrito persistente</strong><span>Se guarda al reiniciar el navegador.</span></article>
       </div>
     </section>
   </main>
@@ -238,16 +182,11 @@
       <h3>Tu carrito</h3>
       <button class="close-btn" id="closeCart" type="button" aria-label="Cerrar carrito">✕</button>
     </div>
-
     <div class="cart-items" id="cartItemsContainer">
       <p class="empty-cart">No hay productos en el carrito.</p>
     </div>
-
     <div class="cart-footer">
-      <div class="total-row">
-        <span>Subtotal</span>
-        <strong id="cartSubtotal">$0</strong>
-      </div>
+      <div class="total-row"><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
       <button class="btn btn-primary full-btn" type="button">Comprar</button>
     </div>
   </aside>
