@@ -64,7 +64,7 @@ function updateCart() {
   cartSubtotal.textContent = formatCOP(subtotal);
 
   if (!cart.length) {
-    cartItemsContainer.innerHTML = '<p class="empty-cart">No hay productos en el carrito.</p>';
+    cartItemsContainer.innerHTML = '<p class="empty-cart">Todavía no has agregado nada.</p>';
     return;
   }
 
